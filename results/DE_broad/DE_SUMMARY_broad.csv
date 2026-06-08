@@ -1,9 +1,0 @@
-"celltype","n_genes_tested","n_up_AD","n_down_AD"
-"Astrocytes",12383,731,1083
-"OPCs",10590,719,971
-"Excitatory_Neurons",12784,606,802
-"Inhibitory_Neurons",10646,577,674
-"Oligodendrocytes",11469,542,372
-"Microglia",4360,347,511
-"Vascular",1916,213,296
-"Cajal_Retzius",1194,37,72
