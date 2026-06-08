@@ -18,9 +18,9 @@
 
 ## What is this project about?
 
-Alzheimer's disease doesn't affect all brain cells equally — some populations are devastated early, some compensate, some actively drive the disease forward. Understanding *which* cells do *what* and *how they talk to each other* during disease is essential for finding better treatments.
+Alzheimer's disease doesn't affect all brain cells equally  some populations are devastated early, some compensate, some actively drive the disease forward. Understanding *which* cells do *what* and *how they talk to each other* during disease is essential for finding better treatments.
 
-This project is a comprehensive re-analysis of a landmark snRNA-seq dataset from human entorhinal cortex — the brain region that fails earliest in Alzheimer's disease — using analytical tools that weren't applied in the original 2019 paper. Instead of just describing transcriptional changes, we reconstructed the full intercellular disease circuit: which cells send what signals to whom, how specific cell populations transition from healthy to diseased states over time, and where the key molecular bottlenecks are.
+This project is a comprehensive re-analysis of a landmark snRNA-seq dataset from human entorhinal cortex — the brain region that fails earliest in Alzheimer's disease using analytical tools that weren't applied in the original 2019 paper. Instead of just describing transcriptional changes, we reconstructed the full intercellular disease circuit: which cells send what signals to whom, how specific cell populations transition from healthy to diseased states over time, and where the key molecular bottlenecks are.
 
 The entorhinal cortex is important because it is the gateway between the hippocampus (memory formation) and the rest of the cortex, and it accumulates tau tangles before any other brain region. Understanding what goes wrong here, at single-cell resolution, gives us a window into the earliest stages of the disease.
 
@@ -63,22 +63,22 @@ The raw FASTQ files are available from NCBI SRA under PRJNA577618. Processed cou
 These are the things we found that haven't been reported before for this dataset:
 
 ### 🔴 The SPP1–CD44 axis: how microglia tell astrocytes to become inflammatory
-Using CellChat, we found a single ligand-receptor interaction — **SPP1 from microglia binding CD44 on astrocytes** — that is completely absent in healthy controls and appears de novo in Alzheimer's disease. This is the molecular handshake by which disease-activated microglia instruct astrocytes to switch into a pro-inflammatory state. It's not just that both cell types are activated in AD; one is actively driving the other.
+Using CellChat, we found a single ligand-receptor interaction  **SPP1 from microglia binding CD44 on astrocytes** that is completely absent in healthy controls and appears de novo in Alzheimer's disease. This is the molecular handshake by which disease-activated microglia instruct astrocytes to switch into a pro-inflammatory state. It's not just that both cell types are activated in AD; one is actively driving the other.
 
 ### 🔴 Layer 2/3 neurons are being flagged for immune elimination
-When we looked at excitatory neurons separated by cortical layer, we found that superficial layer (L2/3) neurons — the most abundant and the first to be lost in AD — are upregulating a very specific set of genes: **MHC-I antigen presentation, NK cell immunity, and leukocyte cytotoxicity programs**. This is the transcriptional signature of cells being marked for immune-mediated destruction. Deeper layer neurons (L5/6) show stress and metabolic failure instead. Two different mechanisms of neuronal death in the same tissue.
+When we looked at excitatory neurons separated by cortical layer, we found that superficial layer (L2/3) neurons the most abundant and the first to be lost in AD are upregulating a very specific set of genes: **MHC-I antigen presentation, NK cell immunity, and leukocyte cytotoxicity programs**. This is the transcriptional signature of cells being marked for immune-mediated destruction. Deeper layer neurons (L5/6) show stress and metabolic failure instead. Two different mechanisms of neuronal death in the same tissue.
 
 ### 🔴 Oligodendrocytes try to repair but get stuck
-OPCs (progenitor cells that normally become myelin-producing oligodendrocytes) are proliferating in AD — but they're not successfully completing the journey to mature oligodendrocytes. Our pseudotime trajectory shows cells accumulating at the **committed OPC (COP) stage**, unable to cross the final differentiation checkpoint. The mechanism: **NF-κB inflammatory signalling** is activating COPs while simultaneously **Notch-HES5 signalling is blocking the myelination program**. The cells are being held in a trapped inflammatory state.
+OPCs (progenitor cells that normally become myelin-producing oligodendrocytes) are proliferating in AD  but they're not successfully completing the journey to mature oligodendrocytes. Our pseudotime trajectory shows cells accumulating at the **committed OPC (COP) stage**, unable to cross the final differentiation checkpoint. The mechanism: **NF-κB inflammatory signalling** is activating COPs while simultaneously **Notch-HES5 signalling is blocking the myelination program**. The cells are being held in a trapped inflammatory state.
 
 ### 🔴 HES5 links two apparently unrelated glial problems
-**HES5**, a Notch pathway effector, rises at late pseudotime in both the astrocyte reactivity trajectory AND the oligodendrocyte differentiation trajectory. The same signalling pathway is simultaneously blocking myelination and driving astrocyte reactivity. This makes Notch-HES5 a pan-glial convergence point — two different pathologies, one shared molecular driver.
+**HES5**, a Notch pathway effector, rises at late pseudotime in both the astrocyte reactivity trajectory AND the oligodendrocyte differentiation trajectory. The same signalling pathway is simultaneously blocking myelination and driving astrocyte reactivity. This makes Notch-HES5 a pan-glial convergence point two different pathologies, one shared molecular driver.
 
 ### 🔴 APP changes who it talks to
-Neurons normally signal to microglia through **APP–SORL1** — a healthy interaction involved in non-amyloidogenic APP processing. In AD, this switches to **APP–CD74** — an interaction that activates microglial inflammation. The same gene (APP, the Alzheimer's gene) is sending a qualitatively different message to the immune cells of the brain.
+Neurons normally signal to microglia through **APP–SORL1** a healthy interaction involved in non-amyloidogenic APP processing. In AD, this switches to **APP–CD74** an interaction that activates microglial inflammation. The same gene (APP, the Alzheimer's gene) is sending a qualitatively different message to the immune cells of the brain.
 
 ### 🔴 The blood-brain barrier fails at its cognitive function programs
-Endothelial cells (the cells lining brain blood vessels) show the highest proportional gene dysregulation of any cell type — nearly 90% of tested genes are significantly changed. More specifically, they lose the gene programs for **"Learning or Memory"**, **"Cognition"**, and **"Cell Junction Organization"** — the molecular machinery that couples blood flow to neural activity and maintains barrier integrity. This may be an early event in disease rather than a secondary consequence of neuronal loss.
+Endothelial cells (the cells lining brain blood vessels) show the highest proportional gene dysregulation of any cell type nearly 90% of tested genes are significantly changed. More specifically, they lose the gene programs for **"Learning or Memory"**, **"Cognition"**, and **"Cell Junction Organization"** the molecular machinery that couples blood flow to neural activity and maintains barrier integrity. This may be an early event in disease rather than a secondary consequence of neuronal loss.
 
 ---
 
