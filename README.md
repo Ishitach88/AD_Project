@@ -29,6 +29,7 @@ This is an ongoing research project by Sri Sathya Sandilya Garemilla and Ishita 
 ## Table of Contents
 
 - [The Dataset](#the-dataset)
+- [Disease Background](#disease-background)
 - [Key Findings](#key-findings)
 - [Project Structure](#project-structure)
 - [Analysis Pipeline](#analysis-pipeline)
@@ -58,6 +59,28 @@ This project is a re-analysis of publicly available data from Grubman et al. (20
 | **Reference genome** | GRCh38 |
 
 > The original Grubman et al. paper used n=6 AD and n=6 Control. We used all 32 available individuals from the same BioProject, giving us more statistical power to detect subtle cell-type-specific differences.
+
+---
+
+## Disease Background
+
+Before diving into the analysis, here is a visual overview of what Alzheimer's disease actually does to the brain — and why studying it at single-cell resolution matters.
+
+<div align="center">
+
+![Healthy vs Alzheimer's Brain](figures/Figure_1_AD.png)
+
+**Figure 1.** Healthy brain (left) vs Alzheimer's disease brain (right) — macroscopic structure and cellular pathology.
+
+</div>
+
+At the macroscopic level, the AD brain shows **cortical shrinkage**, **white matter degeneration**, and **enlarged ventricles** — the direct physical consequence of widespread cell loss over years. At the cellular level, the damage is driven by two converging processes happening simultaneously inside and outside neurons.
+
+The first is **amyloid-beta plaques** — aggregated protein fragments that accumulate in the spaces between neurons, disrupting their ability to communicate and triggering an inflammatory response from surrounding glial cells.
+
+The second is **tau protein tangles** — and this is where the cellular biology becomes particularly striking. In a healthy neuron, tau acts like a series of stabilising brackets along the microtubule scaffold that runs through the axon. That scaffold is the neuron's internal highway, used to transport molecules from the cell body to the synapse and back. In Alzheimer's disease, tau becomes chemically modified (hyperphosphorylated), detaches from the microtubules it was stabilising, and clumps together into tangles. The microtubule highway disintegrates. The neuron can no longer transport what it needs, can no longer communicate with its neighbours, and eventually dies.
+
+What single-nucleus RNA sequencing adds to this picture is the ability to read the molecular response of **every cell type in the tissue simultaneously** — not just the neurons that are dying, but the microglia responding to the plaques, the astrocytes changing their identity, the oligodendrocytes failing to repair myelin, and the endothelial cells losing control of the blood-brain barrier. This is why snRNA-seq is such a powerful tool for understanding AD: it transforms the question from "what is dying?" to "what is every cell in the tissue doing about it?"
 
 ---
 
@@ -149,6 +172,7 @@ AD_snRNAseq_EntorhinalCortex/
 │       └── 04_DAM_signature_scoring.R
 │
 ├── 📁 figures/                     # All output figures (organised by analysis)
+│   ├── Figure_1_AD.png             # Disease overview figure (healthy vs AD brain)
 │   ├── QC/
 │   ├── UMAP/
 │   ├── Volcano/
@@ -512,13 +536,13 @@ This is an ongoing project. If you have questions about the analysis, spot somet
 | Sri Sathya Sandilya Garemilla | Lead analyst | [GitHub](https://github.com/srisathya-garemilla) |
 | Ishita Chopra | Co-analyst | [GitHub](https://github.com/ishitachopra) |
 
-Feel free to open an **Issue** on this repository if you encounter problems running the code, find bugs, or have questions about the biological interpretation. We'll do our best to respond.
-
 ---
+
 <div align="center">
+
 *"The brain is the organ of destiny. It holds within its humming mechanism secrets that will determine the future of the human race."*
 — Wilder Penfield
-    
+
 *Built with curiosity and a genuine interest in understanding what goes wrong in the Alzheimer's disease brain, one cell at a time.*
 
 </div>
