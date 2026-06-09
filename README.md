@@ -121,7 +121,7 @@ Endothelial cells show the highest proportional gene dysregulation of any cell t
 AD_snRNAseq_EntorhinalCortex/
 │
 ├── 📁 data/
-│   ├── raw/                        # Raw FASTQ files (from SRA — not uploaded to GitHub)
+│   ├                       
 │   ├── cellranger_output/          # Per-sample CellRanger output directories
 │   │   ├── AD_1/
 │   │   │   ├── outs/
