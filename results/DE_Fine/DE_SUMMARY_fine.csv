@@ -1,0 +1,17 @@
+"celltype","n_genes_tested","n_up_AD","n_down_AD"
+"Ex_L2_3",9824,1052,2174
+"Astrocytes",11420,757,1092
+"Ex_L5_6",9994,473,497
+"OPCs",8626,302,651
+"In_PVALB",4609,501,422
+"Oligodendrocytes",11469,542,372
+"COPs",7337,596,297
+"Microglia",4360,347,511
+"In_SST",3571,537,240
+"Astrocytes_Reactive",5238,293,457
+"In_VIP",5649,381,341
+"Endothelial",1916,213,296
+"In_LAMP5",3183,186,272
+"In_LAMP5_PAX6",2727,163,227
+"Ex_L6b",1009,108,147
+"Cajal_Retzius",1194,37,72
