@@ -64,7 +64,7 @@ This project is a re-analysis of publicly available data from Grubman et al. (20
 
 ## Disease Background
 
-Before diving into the analysis, here is a visual overview of what Alzheimer's disease actually does to the brain — and why studying it at single-cell resolution matters.
+Before diving into the analysis, here is a visual overview of what Alzheimer's disease actually does to the brain and why studying it at single-cell resolution matters.
 
 <div align="center">
 
