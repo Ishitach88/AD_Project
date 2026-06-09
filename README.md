@@ -20,7 +20,7 @@
 
 Alzheimer's disease doesn't affect all brain cells equally. Some populations are devastated early, some try to compensate, and some actively drive the disease forward. The question we wanted to answer was simple but hard: **which cells do what, and how do they talk to each other during disease?**
 
-To explore this, we took a publicly available single-nucleus RNA-sequencing (snRNA-seq) dataset from human entorhinal cortex — the brain region that fails first in Alzheimer's disease — and ran a comprehensive multi-modal analysis on it. This means we didn't just look at which genes change; we looked at how cell populations transition between healthy and diseased states over time, what signals they send to each other, and where the key molecular breakpoints are.
+To explore this, we took a publicly available single-nucleus RNA-sequencing (snRNA-seq) dataset from human entorhinal cortex, the brain region that fails first in Alzheimer's disease and ran a comprehensive multi-modal analysis on it. This means we didn't just look at which genes change; we looked at how cell populations transition between healthy and diseased states over time, what signals they send to each other, and where the key molecular breakpoints are.
 
 This is an ongoing research project by Sri Sathya Sandilya Garemilla and Ishita Chopra. The code, figures, and analysis scripts are shared here for transparency and reproducibility.
 
@@ -45,7 +45,7 @@ This is an ongoing research project by Sri Sathya Sandilya Garemilla and Ishita 
 
 ## The Dataset
 
-This project is a re-analysis of publicly available data from Grubman et al. (2019). We did not generate new sequencing data — we downloaded the raw FASTQs from NCBI SRA and reprocessed them from scratch using our own pipeline.
+This project is a re-analysis of publicly available data from Grubman et al. (2019). We did not generate new sequencing data, we downloaded the raw FASTQs from NCBI SRA and reprocessed them from scratch using our own pipeline.
 
 | Property | Details |
 |---|---|
@@ -75,13 +75,13 @@ Before diving into the analysis, here is a visual overview of what Alzheimer's d
 
 </div>
 
-At the macroscopic level, the AD brain shows **cortical shrinkage**, **white matter degeneration**, and **enlarged ventricles** — the direct physical consequence of widespread cell loss over years. At the cellular level, the damage is driven by two converging processes happening simultaneously inside and outside neurons.
+At the macroscopic level, the AD brain shows **cortical shrinkage**, **white matter degeneration**, and **enlarged ventricles**, the direct physical consequence of widespread cell loss over years. At the cellular level, the damage is driven by two converging processes happening simultaneously inside and outside neurons.
 
-The first is **amyloid-beta plaques** — aggregated protein fragments that accumulate in the spaces between neurons, disrupting their ability to communicate and triggering an inflammatory response from surrounding glial cells.
+The first is **amyloid-beta plaques**, aggregated protein fragments that accumulate in the spaces between neurons, disrupting their ability to communicate and triggering an inflammatory response from surrounding glial cells.
 
-The second is **tau protein tangles** — and this is where the cellular biology becomes particularly striking. In a healthy neuron, tau acts like a series of stabilising brackets along the microtubule scaffold that runs through the axon. That scaffold is the neuron's internal highway, used to transport molecules from the cell body to the synapse and back. In Alzheimer's disease, tau becomes chemically modified (hyperphosphorylated), detaches from the microtubules it was stabilising, and clumps together into tangles. The microtubule highway disintegrates. The neuron can no longer transport what it needs, can no longer communicate with its neighbours, and eventually dies.
+The second is **tau protein tangles** and this is where the cellular biology becomes particularly striking. In a healthy neuron, tau acts like a series of stabilising brackets along the microtubule scaffold that runs through the axon. That scaffold is the neuron's internal highway, used to transport molecules from the cell body to the synapse and back. In Alzheimer's disease, tau becomes chemically modified (hyperphosphorylated), detaches from the microtubules it was stabilising, and clumps together into tangles. The microtubule highway disintegrates. The neuron can no longer transport what it needs, can no longer communicate with its neighbours, and eventually dies.
 
-What single-nucleus RNA sequencing adds to this picture is the ability to read the molecular response of **every cell type in the tissue simultaneously** — not just the neurons that are dying, but the microglia responding to the plaques, the astrocytes changing their identity, the oligodendrocytes failing to repair myelin, and the endothelial cells losing control of the blood-brain barrier. This is why snRNA-seq is such a powerful tool for understanding AD: it transforms the question from "what is dying?" to "what is every cell in the tissue doing about it?"
+What single-nucleus RNA sequencing adds to this picture is the ability to read the molecular response of **every cell type in the tissue simultaneously** not just the neurons that are dying, but the microglia responding to the plaques, the astrocytes changing their identity, the oligodendrocytes failing to repair myelin, and the endothelial cells losing control of the blood-brain barrier. This is why snRNA-seq is such a powerful tool for understanding AD: it transforms the question from "what is dying?" to "what is every cell in the tissue doing about it?"
 
 ---
 
@@ -91,7 +91,7 @@ These are the main things we found. Some confirm what the original paper reporte
 
 ### 🔴 Microglia instruct astrocytes to become inflammatory — via one specific signal
 
-Using CellChat to map intercellular communication, we found a single ligand-receptor interaction — **SPP1 (from microglia) binding CD44 (on astrocytes)** — that is completely absent in healthy controls and appears only in Alzheimer's disease brains. This is the molecular signal by which disease-activated microglia push astrocytes into a pro-inflammatory reactive state. It's not just that both cell types are activated; one is directly driving the other.
+Using CellChat to map intercellular communication, we found a single ligand-receptor interaction **SPP1 (from microglia) binding CD44 (on astrocytes)** that is completely absent in healthy controls and appears only in Alzheimer's disease brains. This is the molecular signal by which disease-activated microglia push astrocytes into a pro-inflammatory reactive state. It's not just that both cell types are activated; one is directly driving the other.
 
 ### 🔴 Superficial cortical neurons are being marked for immune elimination
 
@@ -103,15 +103,15 @@ OPCs (progenitor cells that become myelin-producing oligodendrocytes) are prolif
 
 ### 🔴 The same molecular signal is disrupting two different cell types
 
-**HES5** — a Notch pathway effector gene — rises at late pseudotime in both the astrocyte reactivity trajectory AND the oligodendrocyte differentiation trajectory. The same signal is simultaneously blocking myelination in oligodendrocytes and driving inflammatory identity in astrocytes. This makes Notch-HES5 a shared upstream driver of two otherwise distinct pathologies in AD.
+**HES5**, a Notch pathway effector gene rises at late pseudotime in both the astrocyte reactivity trajectory AND the oligodendrocyte differentiation trajectory. The same signal is simultaneously blocking myelination in oligodendrocytes and driving inflammatory identity in astrocytes. This makes Notch-HES5 a shared upstream driver of two otherwise distinct pathologies in AD.
 
 ### 🔴 Neurons change the signal they send to microglia
 
-Healthy neurons communicate with microglia through **APP–SORL1** — an interaction involved in normal APP processing. In Alzheimer's disease, this switches to **APP–CD74**, which triggers microglial inflammatory activation. The amyloid precursor protein gene (APP — the central Alzheimer's gene) is sending a qualitatively different message to brain immune cells in disease.
+Healthy neurons communicate with microglia through **APP–SORL1**, an interaction involved in normal APP processing. In Alzheimer's disease, this switches to **APP–CD74**, which triggers microglial inflammatory activation. The amyloid precursor protein gene (APP — the central Alzheimer's gene) is sending a qualitatively different message to brain immune cells in disease.
 
 ### 🔴 The blood-brain barrier loses its cognitive function programs
 
-Endothelial cells show the highest proportional gene dysregulation of any cell type in the dataset — nearly 90% of tested genes are significantly changed. They specifically lose gene programs for **"Learning or Memory"**, **"Cognition"**, and **"Cell Junction Organization"**. These are the molecular programs that couple blood flow to neural activity and maintain barrier integrity. Whether this is a cause or consequence of neurodegeneration is not yet clear, but the scale of change suggests it is not simply a secondary effect.
+Endothelial cells show the highest proportional gene dysregulation of any cell type in the dataset nearly 90% of tested genes are significantly changed. They specifically lose gene programs for **"Learning or Memory"**, **"Cognition"**, and **"Cell Junction Organization"**. These are the molecular programs that couple blood flow to neural activity and maintain barrier integrity. Whether this is a cause or consequence of neurodegeneration is not yet clear, but the scale of change suggests it is not simply a secondary effect.
 
 ---
 
