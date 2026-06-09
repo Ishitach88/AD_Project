@@ -68,7 +68,7 @@ Before diving into the analysis, here is a visual overview of what Alzheimer's d
 
 <div align="center">
 
-![Healthy vs Alzheimer's Brain](figures/Figure_1_AD.png)
+![Healthy vs Alzheimer's Brain]("D:\AD_Project\AD_figure\Figure_1_ AD.png")
 
 **Figure 1.** Healthy brain (left) vs Alzheimer's disease brain (right) — macroscopic structure and cellular pathology.
 
