@@ -347,32 +347,32 @@ Once CellRanger output is ready, all downstream analyses are in R. Run the scrip
 
 ```r
 # 1. Load CellRanger output, apply QC filters, and create Seurat objects
-source("analysis/01_QC/QC_01_load_and_filter.R")
+source("analysis/02_QC/QC_01_load_and_filter.R")
 
 # 2. Normalise, integrate across 32 samples, cluster
-source("analysis/02_clustering/02_integration_RPCA.R")
-source("analysis/02_clustering/03_clustering_leiden.R")
+source("analysis/03_clustering/02_integration_RPCA.R")
+source("analysis/03_clustering/03_clustering_leiden.R")
 
 # 3. Annotate cell types (broad then fine)
-source("analysis/03_annotation/01_broad_annotation.R")
-source("analysis/03_annotation/02_fine_annotation.R")
+source("analysis/04_annotation/01_broad_annotation.R")
+source("analysis/04_annotation/02_fine_annotation.R")
 
 # 4. Differential expression with DESeq2
-source("analysis/04_DEG/01_pseudobulk_DESeq2.R")
+source("analysis/05_DEG/01_pseudobulk_DESeq2.R")
 
 # 5. GSEA at broad and fine resolution
-source("analysis/05_GSEA/01_GSEA_broad.R")
-source("analysis/05_GSEA/02_GSEA_fine.R")
+source("analysis/06_GSEA/01_GSEA_broad.R")
+source("analysis/06_GSEA/02_GSEA_fine.R")
 
 # 6. CellChat cell-cell communication
-source("analysis/06_CellChat/01_cellchat_AD.R")
-source("analysis/06_CellChat/02_cellchat_Control.R")
-source("analysis/06_CellChat/03_comparison.R")
+source("analysis/07_CellChat/01_cellchat_AD.R")
+source("analysis/07_CellChat/02_cellchat_Control.R")
+source("analysis/07_CellChat/03_comparison.R")
 
-# 7. Pseudotime trajectories
-source("analysis/07_Pseudotime/01_astrocyte_trajectory.R")
-source("analysis/07_Pseudotime/02_microglia_trajectory.R")
-source("analysis/07_Pseudotime/03_oligo_lineage_trajectory.R")
+# 7.Trajectory
+source("analysis/08_Trajectory/01_astrocyte_trajectory.R")
+source("analysis/08_Trajectory/02_microglia_trajectory.R")
+source("analysis/08_Trajectory/03_oligo_lineage_trajectory.R")
 ```
 
 ---
