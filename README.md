@@ -121,7 +121,7 @@ Endothelial cells show the highest proportional gene dysregulation of any cell t
 AD_snRNAseq_EntorhinalCortex/
 │
 ├── 📁 data/
-│   ├                       
+│   |                      
 │   ├── cellranger_output/          # Per-sample CellRanger output directories
 │   │   ├── AD_1/
 │   │   │   ├── outs/
@@ -134,58 +134,63 @@ AD_snRNAseq_EntorhinalCortex/
 │       └── SRR_accessions.txt      # SRR IDs for all 32 samples
 │
 ├── 📁 analysis/
-│   ├── 01_QC/                      # Quality control and filtering
+|   ├── 01_CellRanger/                      # Raw FASTQ processing with Cell Ranger
+|   |   └── 01_run_cellranger_count.sh
+│   |
+│   ├── 02_QC/                      # Quality control and filtering
 │   │   ├── QC_01_load_and_filter.R
 │   │   ├── QC_02_violin_plots.R
 │   │   ├── QC_03_scatter_plots.R
 │   │   └── QC_04_density_plots.R
 │   │
-│   ├── 02_clustering/              # Normalisation, integration, UMAP, clustering
+│   ├── 03_clustering/              # Normalisation, integration, UMAP, clustering
 │   │   ├── 01_normalise.R
 │   │   ├── 02_integration_RPCA.R
 │   │   ├── 03_clustering_leiden.R
 │   │   └── 04_umap_visualisation.R
 │   │
-│   ├── 03_annotation/              # Cell type annotation
+│   ├── 04_annotation/              # Cell type annotation
 │   │   ├── 01_broad_annotation.R   # 8 broad cell types
 │   │   ├── 02_fine_annotation.R    # 17 fine subtypes
 │   │   └── 03_marker_dotplots.R
 │   │
-│   ├── 04_DEG/                     # Differential gene expression (DESeq2)
+│   ├── 05_DEG/                     # Differential gene expression (DESeq2)
 │   │   ├── 01_pseudobulk_DESeq2.R
 │   │   └── 02_volcano_plots.R
 │   │
-│   ├── 05_GSEA/                    # Gene set enrichment analysis
+│   ├── 06_GSEA/                    # Gene set enrichment analysis
 │   │   ├── 01_GSEA_broad.R
 │   │   ├── 02_GSEA_fine.R
 │   │   └── 03_barplots.R
 │   │
-│   ├── 06_CellChat/                # Cell-cell communication inference
+│   ├── 07_CellChat/                # Cell-cell communication inference
 │   │   ├── 01_cellchat_AD.R
 │   │   ├── 02_cellchat_Control.R
 │   │   ├── 03_comparison.R
 │   │   └── 04_LR_bubble_plots.R
 │   │
-│   └── 07_Pseudotime/              # Trajectory analysis (Monocle3)
+│   └── 08_Trajectory /              # Trajectory analysis (Monocle3)
 │       ├── 01_astrocyte_trajectory.R
 │       ├── 02_microglia_trajectory.R
 │       ├── 03_oligo_lineage_trajectory.R
 │       └── 04_DAM_signature_scoring.R
 │
-├── 📁 figures/                     # All output figures (organised by analysis)
-│   ├── Figure_1_AD.png             # Disease overview figure (healthy vs AD brain)
-│   ├── QC/
-│   ├── UMAP/
-│   ├── Volcano/
-│   ├── GSEA/
+├── 📁 Plots/                     # All output figures (organised by analysis)
+│   ├── DE_Broad/
+|   ├── DE_fine/
+|   ├── GSEA_broad/
+│   ├── GSEA_fine/
 │   ├── CellChat/
-│   └── Pseudotime/
+│   └── Trajectory/
 │
-├── 📁 results/                     # Saved R objects and result tables
-│   ├── seurat_integrated.rds       # Full integrated Seurat object
-│   ├── DEG_tables/                 # Per-cell-type DESeq2 results (.csv)
-│   ├── GSEA_tables/                # Per-cell-type GSEA results (.csv)
-│   └── cellchat_objects/           # CellChat objects for AD and Control
+├── 📁 results/                    # Saved R objects and result tables
+│   ├── seurat_integrated.rds      # Full integrated Seurat object
+│   ├── DEG_broad/                 # Per-cell-type DESeq2 results (.csv)
+│   ├── DEG_Fine/                  # Per-cell-type DESeq2 results (.csv)
+│   ├── GSEA_broad/                # Per-cell-type GSEA results (.csv)
+│   ├── GSEA_Fine/                 # Per-cell-type GSEA results (.csv)
+|   ├── CellChat/                  # CellChat objects for AD and Control
+│   └── Trajectory/                # Trajectory analysis for AD and Control
 │
 ├── 📄 README.md                    # This file
 ├── 📄 requirements_R.txt           # R package versions
