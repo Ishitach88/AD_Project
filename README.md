@@ -8,7 +8,7 @@
 ![Method](https://img.shields.io/badge/Method-snRNA--seq-green?style=for-the-badge)
 ![Status](https://img.shields.io/badge/Status-In%20Progress-yellow?style=for-the-badge)
 
-**Authors:** Sri Sathya Sandilya Garemilla · Ishita Chopra
+**Authors:** Ishita Chopra · Sri Sathya Sandilya Garemilla
 
 **Source Data:** [PRJNA577618](https://www.ncbi.nlm.nih.gov/bioproject/PRJNA577618) · Grubman et al., *Nature Neuroscience* (2019)
 
@@ -22,7 +22,7 @@ Alzheimer's disease doesn't affect all brain cells equally. Some populations are
 
 To explore this, we took a publicly available single-nucleus RNA-sequencing (snRNA-seq) dataset from human entorhinal cortex, the brain region that fails first in Alzheimer's disease and ran a comprehensive multi-modal analysis on it. This means we didn't just look at which genes change; we looked at how cell populations transition between healthy and diseased states over time, what signals they send to each other, and where the key molecular breakpoints are.
 
-This is an ongoing research project by Sri Sathya Sandilya Garemilla and Ishita Chopra. The code, figures, and analysis scripts are shared here for transparency and reproducibility.
+This is an ongoing research project by Ishita Chopra and Sri Sathya Sandilya Garemilla. The code, figures, and analysis scripts are shared here for transparency and reproducibility.
 
 ---
 
@@ -193,8 +193,7 @@ AD_snRNAseq_EntorhinalCortex/
 │   └── Trajectory/                # Trajectory analysis for AD and Control
 │
 ├── 📄 README.md                    # This file
-├── 📄 requirements_R.txt           # R package versions
-└── 📄 environment.yml              # Conda environment for Python tools
+└── 📄 requirements_R.txt           # R package versions
 ```
 
 > **Note:** Raw FASTQs and large intermediate files (Seurat .rds objects) are not uploaded to GitHub due to file size. Download raw data from NCBI SRA using the accession list in `data/metadata/SRR_accessions.txt`.
@@ -555,8 +554,8 @@ This is an ongoing project. If you have questions about the analysis, spot somet
 
 | Author | Role | Contact |
 |---|---|---|
-| Sri Sathya Sandilya Garemilla | Lead analyst | [GitHub](https://github.com/srisathya-garemilla) |
-| Ishita Chopra | Co-analyst | [GitHub](https://github.com/ishitachopra) |
+| Ishita Chopra | Lead analyst | [GitHub](https://github.com/ishitachopra) |
+| Sri Sathya Sandilya Garemilla | Co-analyst | [GitHub](https://github.com/srisathya-garemilla) |
 
 ---
 
