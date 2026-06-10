@@ -378,6 +378,22 @@ source("analysis/07_Pseudotime/03_oligo_lineage_trajectory.R")
 ---
 
 ## Software Requirements
+## Software Requirements
+
+### R Environment
+
+This project was developed and tested using:
+
+| Software        | Version |
+| --------------- | ------- |
+| R               | 4.3.2   |
+| Seurat          | 5.1.0   |
+| DESeq2          | 1.42.1  |
+| clusterProfiler | 4.10.1  |
+| CellChat        | 1.6.1   |
+| Monocle3        | 1.3.7   |
+| CellRanger      | 9.0.1   |
+| SRA Toolkit     | 3.2.1   |
 
 ### R packages
 
